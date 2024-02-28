@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Blanchard - художественная галерея</title>
+
+  <script src="https://unpkg.com/@popperjs/core@2" defer></script>
+  <script src="https://unpkg.com/tippy.js@6" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js" defer></script>
+  <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js" defer></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=0f813120-afde-4e09-adad-271721f8315f&lang=ru_RU" defer></script>
+  <script src="libs/inputmask.min.js" defer></script>
+  <script src="libs/simplebar.js" defer></script>
+  <script src="js/simplebar.js" defer></script>
+  <script src="js/dropdown.js" defer></script>
+  <script src="js/header.js" defer></script>
+  <script src="js/swiper.js" defer></script>
+  <script src="js/choices.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+  <script src="js/map.js" defer></script>
+  <script src="js/tippy.js" defer></script>
+  <script src="js/modal-gallery.js" defer></script>
+  <script src="js/contacts-form-validate.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.css">
+  <link rel="stylesheet" href="css/simplebar.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="icon" href="assets/icons/favicon.svg">
+</head>
+
+<body>
+  <div class="top-wrapper">
+    <header class="header">
+      <div class="header__top">
+        <div class="container header__top-container">
+          <button class="burger" aria-label="Открыть навигацию по сайту" aria-expanded="false">
+            <span class="burger__line" aria-hidden="true"></span>
+          </button>
+          <a class="header__logo">
+            <picture>
+              <source srcset="assets/icons/logo-1024.svg" media="(max-width: 1024px)">
+              <source srcset="assets/icons/logo-320.svg" media="(max-width: 425px)">
+              <img src="assets/icons/logo.svg" alt="логотип художественной галереи Blanchard">
+            </picture>
+          </a>
+          <nav class="nav">
+            <ul class="nav__list list-reset">
+              <li class="nav__item"><a class="nav__link" href="#about" aria-label="Перейти в раздел О нас">О нас</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#gallery"
+                  aria-label="Перейти в раздел Галерея">Галерея</a></li>
+              <li class="nav__item"><a class="nav__link" href="#catalog"
+                  aria-label="Перейти в раздел Каталог">Каталог</a></li>
+              <li class="nav__item"><a class="nav__link" href="#events"
+                  aria-label="Перейти в раздел События">События</a></li>
+              <li class="nav__item"><a class="nav__link" href="#projects"
+                  aria-label="Перейти в раздел Проекты">Проекты</a></li>
+              <li class="nav__item"><a class="nav__link" href="#contacts"
+                  aria-label="Перейти в раздел Контакты">Контакты</a></li>
+            </ul>
+            <a class="login-link" aria-label="Войти в профиль">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
+                  <path
+                    d="M9.62056 9.09278L10.6389 10.1111L14.25 6.5L10.6389 2.88889L9.62056 3.90722L11.4839 5.77778H0V7.22222H11.4839L9.62056 9.09278ZM16.0556 0H5.94444C5.14278 0 4.5 0.65 4.5 1.44444V4.33333H5.94444V1.44444H16.0556V11.5556H5.94444V8.66667H4.5V11.5556C4.5 12.35 5.14278 13 5.94444 13H16.0556C16.85 13 17.5 12.35 17.5 11.5556V1.44444C17.5 0.65 16.85 0 16.0556 0Z"
+                    fill="none" />
+                </svg>
+              </span>
+              Войти
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="dropdowns" role="navigation" aria-label="Меню с ссылками на художников">
+        <div class="container dropdowns__container" role="menu">
+          <ul class="dropdowns__list list-reset" role="menubar">
+            <li class="dropdowns__item" role="menuitem">
+              <button class="dropdowns__button" aria-label="Открыть выпадающее меню Реализм">
+                <span class="dropdowns__title">Реализм</span>
+                <span class="dropdowns__icon" aria-hidden="true"></span>
+              </button>
+              <div class="dropdown" role="menu" aria-label="Меню категории Реализм" aria-expanded="false">
+                <ul class="dropdown__list list-reset" role="menu" data-simplebar id="scrollist">
+                  <li class="dropdown__item tintoretto">
+                    <a class="dropdown__link" href="#">Тинторетто</a>
+                  </li>
+                  <li class="dropdown__item friedrich">
+                    <a class="dropdown__link" href="#">Фридрих</a>
+                  </li>
+                  <li class="dropdown__item leonardo">
+                    <a class="dropdown__link" href="#">Леонардо</a>
+                  </li>
+                  <li class="dropdown__item verrocchio">
+                    <a class="dropdown__link" href="#">Верроккьо</a>
+                  </li>
+                  <li class="dropdown__item tintoretto">
+                    <a class="dropdown__link" href="#">Тинторетто</a>
+                  </li>
+                  <li class="dropdown__item friedrich">
+                    <a class="dropdown__link" href="#">Фридрих</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdowns__item">
+              <button class="dropdowns__button" aria-label="Открыть выпадающее меню Импрессионизм">
+                <span class="dropdowns__title">Импрессионизм</span>
+                <span class="dropdowns__icon" aria-hidden="true"></span>
+              </button>
+              <div class="dropdown" role="menu" aria-label="Меню категории Импрессионизм" aria-expanded="false">
+                <ul class="dropdown__list list-reset" role="menu">
+                  <li class="dropdown__item monet">
+                    <a class="dropdown__link" href="#">Моне</a>
+                  </li>
+                  <li class="dropdown__item sisley">
+                    <a class="dropdown__link" href="#">Сислей</a>
+                  </li>
+                  <li class="dropdown__item manet">
+                    <a class="dropdown__link" href="#">Мане</a>
+                  </li>
+                  <li class="dropdown__item renoir">
+                    <a class="dropdown__link" href="#">Ренуар</a>
+                  </li>
+                </ul>
+
+              </div>
+            </li>
+            <li class="dropdowns__item">
+              <button class="dropdowns__button" aria-label="Открыть выпадающее меню Постимпрессионизм">
+                <span class="dropdowns__title">Постимпрессионизм</span>
+                <span class="dropdowns__icon" aria-hidden="true"></span>
+              </button>
+              <div class="dropdown" role="menu" aria-label="Меню категории Постимпрессионизм" aria-expanded="false">
+                <ul class="dropdown__list list-reset" role="menu">
+                  <li class="dropdown__item van-gogh">
+                    <a class="dropdown__link" href="#">Ван Гог</a>
+                  </li>
+                  <li class="dropdown__item cezanne">
+                    <a class="dropdown__link" href="#">Сезанн</a>
+                  </li>
+                  <li class="dropdown__item gauguin">
+                    <a class="dropdown__link" href="#">Гоген</a>
+                  </li>
+                  <li class="dropdown__item sulfur">
+                    <a class="dropdown__link" href="#">Сёра</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdowns__item">
+              <button class="dropdowns__button" aria-label="Открыть выпадающее меню Авангард">
+                <span class="dropdowns__title">Авангард</span>
+                <span class="dropdowns__icon" aria-hidden="true"></span>
+              </button>
+              <div class="dropdown" role="menu" aria-label="Меню категории Авангард" aria-expanded="false">
+                <ul class="dropdown__list list-reset" role="menu">
+                  <li class="dropdown__item kandinsky">
+                    <a class="dropdown__link" href="#">Кандинский</a>
+                  </li>
+                  <li class="dropdown__item marinetti">
+                    <a class="dropdown__link" href="#">Маринетти</a>
+                  </li>
+                  <li class="dropdown__item malevich">
+                    <a class="dropdown__link" href="#">Малевич</a>
+                  </li>
+                  <li class="dropdown__item picasso">
+                    <a class="dropdown__link" href="#">Пикассо</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdowns__item">
+              <button class="dropdowns__button" aria-label="Открыть выпадающее меню Футуризм">
+                <span class="dropdowns__title">Футуризм</span>
+                <span class="dropdowns__icon" aria-hidden="true"></span>
+              </button>
+              <div class="dropdown" role="menu" aria-label="Меню категории Футуризм" aria-expanded="false">
+                <ul class="dropdown__list list-reset" role="menu">
+                  <li class="dropdown__item carra">
+                    <a class="dropdown__link" href="#">Карра</a>
+                  </li>
+                  <li class="dropdown__item pratella">
+                    <a class="dropdown__link" href="#">Прателла</a>
+                  </li>
+                  <li class="dropdown__item severini">
+                    <a class="dropdown__link" href="#">Северини</a>
+                  </li>
+                  <li class="dropdown__item balla">
+                    <a class="dropdown__link" href="#">Балла</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form class="search-form" role="search">
+            <button class="search-form__btn-open" type="submit" aria-label="Поиск по сайту">
+              <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="6.8678" height="1.71695"
+                  transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="none" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z"
+                  fill="none" />
+              </svg>
+            </button>
+            <input class="search-form__input" id="search" type="search" name="search" placeholder="Поиск по сайту"
+              autocomplete="off" required>
+            <button class="search-form__btn-close" type="button" aria-label="Закрыть поисковую строку">
+              <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="29.567" height="2.9567" transform="matrix(0.707093 0.707121 -0.707093 0.707121 2.09375 0)"
+                  fill="none" />
+                <rect width="29.567" height="2.9567" transform="matrix(0.707093 -0.707121 0.707093 0.707121 0 20.9074)"
+                  fill="none" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+  </div>
+  <main>
+
+    <section class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="visually-hidden">Художественная галерея Blanchard</h1>
+          <h2 class="hero__title">Прикоснитесь к&nbsp;прекрасному</h2>
+          <p class="hero__descr">
+            Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт
+            предпосылки для новых предложений
+          </p>
+          <a class="hero__link" href="#contacts" aria-label="Подписаться на расссылку">Подписаться на рассылку</a>
+        </div>
+      </div>
+
+      <div class="hero__swiper" aria-hidden="true">
+        <div class="swiper-wrapper hero__swiper-container">
+          <div class="swiper-slide hero__slide hero__slide-1"></div>
+          <div class="swiper-slide hero__slide hero__slide-2"></div>
+          <div class="swiper-slide hero__slide hero__slide-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title about__title">О нас</h2>
+        <p class="about__descr">
+          Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого
+          участника как&nbsp;способного принимать собственные решения касаемо распределения внутренних резервов
+          и&nbsp;ресурсов. Не&nbsp;следует, однако, забывать, что&nbsp;высококачественный прототип будущего проекта
+          влечёт
+          за&nbsp;собой процесс внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает, что
+          высокое качество позиционных исследований создаёт необходимость включения в&nbsp;производственный план целого
+          ряда внеочередных мероприятий с&nbsp;учётом комплекса распределения внутренних резервов и&nbsp;ресурсов.
+          В&nbsp;рамках спецификации современных стандартов, действия представителей оппозиции набирают популярность
+          среди
+          определённых слоёв населения, а&nbsp;значит, должны быть разоблачены.
+        </p>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="container gallery__container">
+        <div class="gallery__left">
+          <h2 class="section-title gallery__title">Галерея</h2>
+          <span class="gallery__subtitle">Фильтр:</span>
+          <select class="js-choice" name="artform" id="artform" aria-label="Выберите вид искусства">
+            <option selected value="Живопись">Живопись</option>
+            <option value="Рисунок">Рисунок</option>
+            <option value="Скульптура">Скульптура</option>
+          </select>
+          <ul class="gallery__checkbox-list list-reset" role="group">
+            <li class="gallery__checkbox-item">
+              <label class="gallery__check" for="19th-century" tabindex="0">
+                <input id="19th-century" type="checkbox" name="девятнадцатый век"
+                  aria-label="Фильтр галереи, девятнадцатый век" aria-checked="false" tabindex="-1">
+                <span class="gallery__check-text" aria-hidden="true">
+                  XIX век
+                </span>
+              </label>
+            </li>
+
+            <li class="gallery__checkbox-item">
+              <label class="gallery__check" for="20th-century" tabindex="0">
+                <input id="20th-century" type="checkbox" name="двадцатый век" aria-label="Фильтр галереи, двадцатый век"
+                  checked aria-checked="true" tabindex="-1">
+                <span class="gallery__check-text" aria-hidden="true">
+                  XX век
+                </span>
+              </label>
+            </li>
+
+            <li class="gallery__checkbox-item">
+              <label class="gallery__check" for="modernity" tabindex="0">
+                <input type="checkbox" name="современность" aria-label="Фильтр галереи, современность" id="modernity"
+                  aria-checked="false" tabindex="-1">
+                <span class="gallery__check-text" aria-hidden="true">
+                  Современность
+                </span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="gallery__slider-container">
+
+          <div class="gallery__swiper-btns">
+            <div class="gallery__swiper-button-prev swiper-button-prev" role="button" aria-label="Следующий слайд">
+            </div>
+            <div class="gallery-pagination"></div>
+            <div class="gallery__swiper-button-next swiper-button-next" role="button" aria-label="Предыдущий слайд">
+            </div>
+          </div>
+
+          <div class="gallery__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide gallery__slide gallery-slide-1">
+                <button class="gallery__btn" data-modal-btn="one" aria-label="Открыть информацию о картине">
+                  <picture>
+                    <source srcset="assets/img/gallery-slide-1@320.jpg" media="(max-width: 425px)">
+                    <source srcset="assets/img/gallery-slide-1@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/gallery-slide-1@1024.jpg" media="(max-width: 1024px)">
+                    <img class="gallery__img" src="/assets/img/gallery-slide-1.jpg"
+                      alt="Картина Казимира Малевича «Торс (Фигура с розовым лицом)»">
+                  </picture>
+                </button>
+                </picture>
+              </div>
+              <div class="swiper-slide gallery__slide gallery-slide-2">
+                <button class="gallery__btn" data-modal-btn="two" aria-label="Открыть информацию о картине">
+                  <picture>
+                    <source srcset="assets/img/gallery-slide-2@320.jpg" media="(max-width: 425px)">
+                    <source srcset="assets/img/gallery-slide-2@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/gallery-slide-2@1024.jpg" media="(max-width: 1024px)">
+                    <img class="gallery__img" src="/assets/img/gallery-slide-2.jpg"
+                      alt="Картина Казимира Малевича «Женщина с граблями»">
+                  </picture>
+                </button>
+              </div>
+              <div class="swiper-slide gallery__slide gallery-slide-3">
+                <button class="gallery__btn" data-modal-btn="three" aria-label="Открыть информацию о картине">
+                  <picture>
+                    <source srcset="assets/img/gallery-slide-3@320.jpg" media="(max-width: 425px)">
+                    <source srcset="assets/img/gallery-slide-3@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/gallery-slide-3@1024.jpg" media="(max-width: 1024px)">
+                    <img class="gallery__img" src="/assets/img/gallery-slide-3.jpg"
+                      alt="Картина Казимира Малевича «Уборка ржи»">
+                  </picture>
+                </button>
+              </div>
+
+              <div class="swiper-slide gallery__slide gallery-slide-4">
+                <button class="gallery__btn" data-modal-btn="four" aria-label="Открыть информацию о картине">
+                  <picture>
+                    <source srcset="assets/img/gallery-slide-4@320.jpg" media="(max-width: 425px)">
+                    <source srcset="assets/img/gallery-slide-4@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/gallery-slide-4@1024.jpg" media="(max-width: 1024px)">
+                    <img class="gallery__img" src="/assets/img/gallery-slide-4.jpg"
+                      alt="Картина Клюна Ивана «Супрематизм»">
+                  </picture>
+                </button>
+              </div>
+
+              <div class="swiper-slide gallery__slide gallery-slide-5">
+                <button class="gallery__btn" data-modal-btn="five" aria-label="Открыть информацию о картине">
+                  <picture>
+                    <source srcset="assets/img/gallery-slide-5@320.jpg" media="(max-width: 425px)">
+                    <source srcset="assets/img/gallery-slide-5@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/gallery-slide-5@1024.jpg" media="(max-width: 1024px)">
+                    <img class="gallery__img" src="/assets/img/gallery-slide-5.jpg"
+                      alt="Картина Казимира Малевича «Женщина с вёдрами»">
+                  </picture>
+                </button>
+              </div>
+              <div class="swiper-slide gallery__slide gallery-slide-6">
+                <button class="gallery__btn" data-modal-btn="six" aria-label="Открыть информацию о картине">
+                  <picture>
+                    <source srcset="assets/img/gallery-slide-6@320.jpg" media="(max-width: 425px)">
+                    <source srcset="assets/img/gallery-slide-6@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/gallery-slide-6@1024.jpg" media="(max-width: 1024px)">
+                    <img class="gallery__img" src="/assets/img/gallery-slide-6.jpg"
+                      alt="Картина Казимира Малевича. Супрематизм">
+                  </picture>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="container">
+        <h2 class="section-title catalog__title">Каталог</h2>
+        <p class="catalog__descr">
+          Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа
+          политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. Являясь всего
+          лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей
+          день остаются уделом либералов, которые жаждут быть функционально разнесены на&nbsp;независимые элементы.
+        </p>
+
+        <div class="catalog__content">
+          <div class="catalog__tabs-wrapper">
+
+            <div class="catalog__tabs-content" id="tabspanel-1" data-tabs-target="empty" aria-labelledby="tab-1"
+              aria-expanded="false" aria-hidden="true">
+              <picture>
+                <source srcset="assets/img/catalog-tabs-empty@320.jpg" media="(max-width: 425px)">
+                <source srcset="assets/img/catalog-tabs-empty@768.jpg" media="(max-width: 768px)">
+                <source srcset="assets/img/catalog-tabs-empty@1024.jpg" media="(max-width: 1024px)">
+                <img class="catalog__tabs-img" src="assets/img/catalog-tabs-empty.jpg" alt="Здесь пока пусто">
+              </picture>
+              <h3 class="catalog__tabs-title">Что мы&nbsp;о&nbsp;нём знаем?</h3>
+              <span class="catalog__tabs-subtitle">Пока ничего… Зато мы точно знаем, что в галерее есть на что
+                посмотреть!</span>
+              <a class="catalog__tabs-link" href="#gallery">В галерею</a>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-2" data-tabs-target="bergognone" aria-labelledby="tab-2"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-bergognone.jpg"
+                alt="Картина Амброджо Бергоньоне">
+              <h3 class="catalog__tabs-title">Бергоньоне, Амброджо</h3>
+              <span class="catalog__tabs-subtitle">1453&nbsp;&mdash; 1523</span>
+              <p class="catalog__tabs-descr">
+                Итальянский живописец эпохи Возрождения ломбардской школы, деятельный в&nbsp;Милане. Известен своими
+                алтарными произведениями и&nbsp;сводами церквей.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-3" data-tabs-target="bissolo" aria-labelledby="tab-3"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-bissolo.jpg" alt="Картина Франческо Биссоло">
+              <h3 class="catalog__tabs-title">Биссоло, Франческо</h3>
+              <span class="catalog__tabs-subtitle">1&nbsp;июля 1470 года&nbsp;&mdash; 5&nbsp;июля 1554 года</span>
+              <p class="catalog__tabs-descr">
+                Итальянский художник эпохи Возрождения. Известен своими портретами и&nbsp;религиозными произведениями,
+                работал в&nbsp;основном в&nbsp;Венеции и&nbsp;Падуе. В&nbsp;его творчестве видны влияния таких
+                художников, как Джованни Беллини и&nbsp;Джорджоне.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-4" data-tabs-target="boltraffio" aria-labelledby="tab-4"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-boltraffio.jpg"
+                alt="Картина Джованни Больтраффио">
+              <h3 class="catalog__tabs-title">Больтраффио, Джованни</h3>
+              <span class="catalog__tabs-subtitle">1466&nbsp;&mdash; 1516</span>
+              <p class="catalog__tabs-descr">
+                Итальянский художник эпохи Возрождения, ученик Леонардо да&nbsp;Винчи. Известен своими портретами
+                и&nbsp;альтернативными версиями работ Леонардо.Его стиль сильно был подвержен влиянию учителя,
+                их&nbsp;работы порой трудно отличить друг от&nbsp;друга.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-5" data-tabs-target="bonsignori" aria-labelledby="tab-5"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-bonsignori.jpg"
+                alt="Картина Франческо Бонсиньори">
+              <h3 class="catalog__tabs-title">Бонсиньори, Франческо</h3>
+              <span class="catalog__tabs-subtitle">1455&nbsp;&mdash; 20&nbsp;января 1519 года</span>
+              <p class="catalog__tabs-descr">
+                Итальянский художник эпохи Возрождения. Был известен своими портретами и&nbsp;религиозными композициями.
+                Он&nbsp;работал в&nbsp;Вероне и&nbsp;Венеции, создавая изящные произведения искусства с&nbsp;тщательной
+                проработкой деталей. Его работы отличаются утонченным стилем, четкой композицией и&nbsp;использованием
+                светотени.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-6" data-tabs-target="botticini" aria-labelledby="tab-6"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-botticini.jpg"
+                alt="Картина Рафаэлло Боттичини">
+              <h3 class="catalog__tabs-title">Боттичини, Рафаэлло</h3>
+              <span class="catalog__tabs-subtitle">11&nbsp;сентября 1477&nbsp;&mdash; неизвестно</span>
+              <p class="catalog__tabs-descr">
+                Итальянский художник эпохи Возрождения. Был учеником своего отца, флорентийского художника Филиппо
+                Боттичини. Известен своими религиозными произведениями и&nbsp;альтернативно-исторической живописью. Его
+                работы обычно имеют нотки античности и&nbsp;умеренно реалистичный стиль.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-7" data-tabs-target="bramantino" aria-labelledby="tab-7"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-bramantino.jpg" alt="Картина Брамантино">
+              <h3 class="catalog__tabs-title">Брамантино</h3>
+              <span class="catalog__tabs-subtitle">1465&nbsp;&mdash; 1530</span>
+              <p class="catalog__tabs-descr">
+                Брамантино, настоящее имя которого Бартоломео Содомо, был итальянским художником из&nbsp;периода
+                Высокого Возрождения. Был известен своими портретами, алтарными картинами и&nbsp;фресками. Его стиль
+                сочетал в&nbsp;себе элементы высокого ренессанса и&nbsp;маньеризма, с&nbsp;яркими цветами
+                и&nbsp;детальной проработкой. Его работы часто имеют загадочный и&nbsp;аллегорический характер.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-8" data-tabs-target="brea" aria-labelledby="tab-8"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-brea.jpg" alt="Картина Людовико Бреа">
+              <h3 class="catalog__tabs-title">Бреа, Людовико</h3>
+              <span class="catalog__tabs-subtitle">1450&nbsp;&mdash; 1523</span>
+              <p class="catalog__tabs-descr">
+                Ренессансный художник французского происхождения, работы которого в&nbsp;основном сосредоточены
+                в&nbsp;прибрежных городах современных Лигурии (Италия) и&nbsp;восточной части Приморских Альп (Франция).
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-9" data-tabs-target="tucci" aria-labelledby="tab-9"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-tucci.jpg"
+                alt="Картина Бьяджо д’Антонио Туччи">
+              <h3 class="catalog__tabs-title">Бьяджо д’Антонио Туччи</h3>
+              <span class="catalog__tabs-subtitle">1445&nbsp;&mdash; 1510</span>
+              <p class="catalog__tabs-descr">
+                Итальянский художник эпохи Возрождения. Его творчество было вдохновлено работами Филиппо Липпи, Андреа
+                Верроккьо, Доменико Гирландайо.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-10" data-tabs-target="vecchietta" aria-labelledby="tab-10"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-vecchietta.jpg" alt="Картина Веккьетта">
+              <h3 class="catalog__tabs-title">Веккьетта</h3>
+              <span class="catalog__tabs-subtitle">1477&nbsp;&mdash; 14&nbsp;февраля 1549</span>
+              <p class="catalog__tabs-descr">
+                Был итальянским художником эпохи Возрождения. Его настоящее имя Джованни ди&nbsp;Никколо ди&nbsp;Лутери,
+                а&nbsp;сам он&nbsp;был известен как Иль Содома. Был известен своими фресками и&nbsp;живописью,
+                в&nbsp;частности, работал во&nbsp;многих церквях и&nbsp;палацах Италии. Стиль работы Виккьетта сочетал
+                в&nbsp;себе элементы высокого ренессанса, маньеризма и&nbsp;экспрессионизма. Его работы знамениты своими
+                яркими красками, динамичными композициями и&nbsp;изображениями героических и&nbsp;религиозных сюжетов.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-11" data-tabs-target="verrocchio" aria-labelledby="tab-11"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-verrocchio.jpg"
+                alt="Картина Андреа Верроккьо">
+              <h3 class="catalog__tabs-title">Андреа Верроккьо</h3>
+              <span class="catalog__tabs-subtitle">1435&nbsp;&mdash; 1488</span>
+              <p class="catalog__tabs-descr">
+                Итальянский художник эпохи Возрождения. Его настоящее имя Джованни ди&nbsp;Никколо
+                ди&nbsp;ЛутеНастоящее имя Андреа ди&nbsp;Микеле Чони. Скульптор и&nbsp;живописец эпохи Возрождения,
+                представитель Флорентийской школы. Среди его учеников&nbsp;&mdash; Сандро Боттичелли, Пьетро Перуджино,
+                Леонардо да&nbsp;Винчи и&nbsp;Лоренцо ди&nbsp;Креди.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content catalog__tabs-content--active" id="tabspanel-12"
+              data-tabs-target="domenico" aria-labelledby="tab-12" aria-expanded="true" aria-hidden="false">
+              <picture>
+                <source srcset="assets/img/catalog-tabs-domenico@320.jpg" media="(max-width: 425px)">
+                <source srcset="assets/img/catalog-tabs-domenico@768.jpg" media="(max-width: 768px)">
+                <source srcset="assets/img/catalog-tabs-domenico@1024.jpg" media="(max-width: 1024px)">
+                <img class="catalog__tabs-img" src="assets/img/catalog-tabs-domenico.jpg"
+                  alt="Портрет Доменико Гирландайо">
+              </picture>
+              <h3 class="catalog__tabs-title">Доменико Гирландайо</h3>
+              <span class="catalog__tabs-subtitle">2&nbsp;июня 1448 &ndash; 11 января 1494</span>
+              <p class="catalog__tabs-descr">
+                Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
+                продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело
+                в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых
+                выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей
+                (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того времени).
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-13" data-tabs-target="gozzoli" aria-labelledby="tab-13"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-gozzoli.jpg" alt="Картина Беноццо Гоццоли">
+              <h3 class="catalog__tabs-title">Беноццо Гоццоли</h3>
+              <span class="catalog__tabs-subtitle">1420&nbsp;&mdash; 4&nbsp;октября 1497</span>
+              <p class="catalog__tabs-descr">
+                Итальянский художник, живописец и&nbsp;скульптор периода Кватроченто, мастер фресковых росписей,
+                представитель флорентийской школы живописи.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-14" data-tabs-target="granacci" aria-labelledby="tab-14"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-granacci.jpg"
+                alt="Картина Франческо Граначчи">
+              <h3 class="catalog__tabs-title">Граначчи, Франческо</h3>
+              <span class="catalog__tabs-subtitle">23&nbsp;июля 1469&nbsp;&mdash; 30&nbsp;ноября 1543</span>
+              <p class="catalog__tabs-descr">
+                Был известен своими произведениями раннего Возрождения, а&nbsp;также аллегорическими
+                и&nbsp;мифологическими композициями. Его работы отличались изяществом и&nbsp;гармонией форм, что сделало
+                его одним из&nbsp;величайших живописцев своего времени.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-15" data-tabs-target="di-cecco" aria-labelledby="tab-15"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-di-cecco.jpg" alt="Картина Грегорио ди Чекко">
+              <h3 class="catalog__tabs-title">Грегорио ди Чекко</h3>
+              <span class="catalog__tabs-subtitle">1390-е&nbsp;&mdash; 1&nbsp;июля 1424</span>
+              <p class="catalog__tabs-descr">
+                О&nbsp;Грегорио очень мало сведений. Известно, что он&nbsp;был приёмным сыном и&nbsp;учеником Таддео
+                ди&nbsp;Бартоло, работал в&nbsp;его мастерской, а&nbsp;единственным достоверным произведением является
+                алтарь, написанный им&nbsp;в&nbsp;1423 году для капеллы Франческо Толомеи в&nbsp;сиенском соборе,
+                на&nbsp;котором стоит его подпись. В&nbsp;начале&nbsp;XX века его путали с&nbsp;упоминаемым
+                в&nbsp;документах Джорджо ди&nbsp;Кеко ди&nbsp;Лука, поскольку Миланези в&nbsp;1853 году неправильно
+                транскрибировал имя Грегорио.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-16" data-tabs-target="da-udine" aria-labelledby="tab-16"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-da-udine.jpg" alt="Картина Джованни да Удине">
+              <h3 class="catalog__tabs-title">Джованни да Удине</h3>
+              <span class="catalog__tabs-subtitle">15&nbsp;октября 1487&nbsp;&mdash; 1564</span>
+              <p class="catalog__tabs-descr">
+                Был итальянским художником и&nbsp;архитектором эпохи Высокого Возрождения. Он&nbsp;известен своими
+                работами в&nbsp;области фресок и&nbsp;живописи, а&nbsp;также своим участием в&nbsp;декорировании собора
+                Святого Марка в&nbsp;Венеции.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-17" data-tabs-target="di-paolo" aria-labelledby="tab-17"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-di-paolo.jpg" alt="Картина Джованни ди Паоло">
+              <h3 class="catalog__tabs-title">Джованни ди Паоло</h3>
+              <span class="catalog__tabs-subtitle">1403&nbsp;&mdash; 1482</span>
+              <p class="catalog__tabs-descr">
+                Итальянский художник эпохи итальянского Возрождения, активный в&nbsp;XV&nbsp;веке, преимущественно
+                в&nbsp;городе Сиене. Он&nbsp;был известен своими работами в&nbsp;различных жанрах, включая иконографию,
+                алтарные картины и&nbsp;миниатюры.
+                Джованни ди&nbsp;Паоло ди&nbsp;Грация является представителем уникального стиля, объединяющего
+                в&nbsp;себе элементы средневековой символики и&nbsp;ренессансной манеры. Его работы отличаются яркими
+                цветами и&nbsp;детальной проработкой деталей.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-18" data-tabs-target="giorgione" aria-labelledby="tab-18"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-giorgione.jpg" alt="Картина Джорджоне">
+              <h3 class="catalog__tabs-title">Джорджоне</h3>
+              <span class="catalog__tabs-subtitle">1477/1478&nbsp;&mdash; 17&nbsp;сентября 1510</span>
+              <p class="catalog__tabs-descr">
+                Итальянский живописец, представитель венецианской школы; один из&nbsp;выдающихся мастеров Высокого
+                Возрождения. Необычайно одарённый художник, он&nbsp;был также поэтом и&nbsp;музыкантом. Джорджоне прожил
+                короткую жизнь, но&nbsp;успел создать особое, идиллическое направление в&nbsp;живописи.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-19" data-tabs-target="parentino" aria-labelledby="tab-19"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-parentino.jpg"
+                alt="Картина Бернардо Парентино">
+              <h3 class="catalog__tabs-title">Парентино, Бернардо</h3>
+              <span class="catalog__tabs-subtitle">ок.&nbsp;1437&nbsp;&mdash; 28&nbsp;октября 1531</span>
+              <p class="catalog__tabs-descr">
+                Настоящее имя которого Бернардо ди&nbsp;Бетто, был итальянским художником эпохи Возрождения, активным
+                в&nbsp;XV&nbsp;веке. Он&nbsp;прожил и&nbsp;работал в&nbsp;городе Венеции и&nbsp;был известен своими
+                фресками, алтарными картиными и&nbsp;портретами. Бернардо Парентино был влиятельным художником своего
+                времени и&nbsp;его работы отличались характерной мягкостью и&nbsp;атмосферностью.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-20" data-tabs-target="pezellino" aria-labelledby="tab-20"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-pezellino.jpg" alt="Картина Пезеллино">
+              <h3 class="catalog__tabs-title">Пезеллино</h3>
+              <span class="catalog__tabs-subtitle">1457&nbsp;&mdash; 18&nbsp;апреля 1504</span>
+              <p class="catalog__tabs-descr">
+                Настоящее имя которого Бернардо ди&nbsp;Бетто, был итальянским художником эпохи Возрождения, активным
+                в&nbsp;XV&nbsp;веке. Он&nbsp;прожил и&nbsp;работал в&nbsp;городе Венеции и&nbsp;был известен своими
+                фресками, алтарными картиными и&nbsp;портретами. Бернардо Парентино был влиятельным художником своего
+                времени и&nbsp;его работы отличались характерной мягкостью и&nbsp;атмосферностью.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-21" data-tabs-target="perugino" aria-labelledby="tab-21"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-perugino.jpg" alt="Картина Пьетро Перуджино">
+              <h3 class="catalog__tabs-title">Пьетро Перуджино</h3>
+              <span class="catalog__tabs-subtitle">1448&nbsp;&mdash; 1523</span>
+              <p class="catalog__tabs-descr">
+                Был итальянским художником эпохи Высокого Возрождения. Работал в&nbsp;различных городах Италии, таких
+                как Флоренция, Рим и&nbsp;Перуджа, откуда происходит его прозвище. Он&nbsp;был одним из&nbsp;главных
+                представителей умения в&nbsp;период позднего Возрождения и&nbsp;оказал значительное влияние
+                на&nbsp;художественную среду своего времени. Его работы отличаются изысканным стилем, гармоничными
+                композициями и&nbsp;использованием светотени, что делает его произведения запоминающимися
+                и&nbsp;привлекательными для зрителей.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-22" data-tabs-target="peruzzi" aria-labelledby="tab-22"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-peruzzi.jpg"
+                alt="Картина Бальдассаре Перуцци">
+              <h3 class="catalog__tabs-title">Перуцци, Бальдассаре</h3>
+              <span class="catalog__tabs-subtitle">7&nbsp;марта 1481&nbsp;&mdash; 6&nbsp;января 1536</span>
+              <p class="catalog__tabs-descr">
+                Итальянский архитектор и&nbsp;живописец эпохи Высокого Возрождения и&nbsp;раннего маньеризма.
+              </p>
+            </div>
+
+            <div class="catalog__tabs-content" id="tabspanel-23" data-tabs-target="pisanello" aria-labelledby="tab-23"
+              aria-expanded="false" aria-hidden="true">
+              <img class="catalog__tabs-img" src="assets/img/catalog-tabs-pisanello.jpg" alt="Картина Пизанелло">
+              <h3 class="catalog__tabs-title">Пизанелло</h3>
+              <span class="catalog__tabs-subtitle">7&nbsp;марта 1481&nbsp;&mdash; 6&nbsp;января 1536</span>
+              <p class="catalog__tabs-descr">
+                Пизанелло был итальянским художником и&nbsp;скульптором эпохи Возрождения. Он&nbsp;был известен своими
+                работами в&nbsp;области фресок, живописи и&nbsp;гравюры, а&nbsp;также создал множество произведений
+                искусства для церквей и&nbsp;дворцов. Пизанелло считается одним из&nbsp;величайших художников своего
+                времени и&nbsp;оказал значительное влияние на&nbsp;развитие искусства эпохи Возрождения.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="accordion-container accordion">
+            <div class="ac is-active">
+              <h2 class="ac-header">
+                <button class="ac-trigger ac-trigger-1">
+                  <span class="accordion__title">C&nbsp;1400 по&nbsp;1499&nbsp;гг</span>
+                  <span class="accordion__icon"></span>
+                </button>
+              </h2>
+              <div class="ac-panel" aria-orientation="vertical">
+                <div class="tabs" aria-hidden="false">
+                  <ul class="tabs__list list-reset">
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="empty" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-1">Бенедетто ди Биндо</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="bergognone" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-2">Бергоньоне, Амброджо</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="bissolo" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-3">Биссоло, Франческо</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="boltraffio" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-4">Больтраффио, Джованни</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="bonsignori" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-5">Бонсиньори, Франческо</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="botticini" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-6">Боттичини, Рафаэлло</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="bramantino" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-7">Брамантино</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="brea" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-8">Бреа, Людовико</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="tucci" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-9">Бьяджо д’Антонио Туччи</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="vecchietta" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-10">Веккьетта</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="verrocchio" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-11">Андреа Верроккьо</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="domenico" role="tab" aria-selected="true"
+                        aria-controls="tabpanel-12">Доменико
+                        Гирландайо</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="gozzoli" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-13">Беноццо Гоццоли</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="granacci" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-14">Граначчи, Франческо</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="di-cecco" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-15">Грегорио ди Чекко</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="da-udine" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-16">Джованни да Удине</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="di-paolo" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-17">Джованни ди Паоло</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="giorgione" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-18">Джорджоне</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="parentino" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-19">Парентино, Бернардо</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="pezellino" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-20">Пезеллино</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="perugino" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-21">Пьетро Перуджино</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="peruzzi" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-22">Перуцци, Бальдассаре</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="pisanello" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-23">Пизанелло</button>
+                    </li>
+                    <li class="tabs__item">
+                      <button class="tabs__btn" data-tabs-path="empty" role="tab" aria-selected="false"
+                        aria-controls="tabpanel-24">Пинтуриккьо</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="ac">
+              <h2 class="ac-header">
+                <button class="ac-trigger">
+                  <span class="accordion__title">C&nbsp;1500 по&nbsp;1599&nbsp;гг</span>
+                  <span class="accordion__icon"></span>
+                </button>
+
+              </h2>
+              <div class="ac-panel">
+                <div class="stub">
+                  <div class="stub__img"></div>
+                  <div class="stub__content">
+                    <span class="stub__title">Здесь пока пусто</span>
+                    <p class="stub__descr">
+                      А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="stub__link" href="#gallery">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ac">
+              <h2 class="ac-header">
+                <button class="ac-trigger">
+                  <span class="accordion__title">C&nbsp;1600 по&nbsp;1699&nbsp;гг</span>
+                  <span class="accordion__icon"></span>
+                </button>
+              </h2>
+              <div class="ac-panel">
+                <div class="stub">
+                  <div class="stub__img"></div>
+                  <div class="stub__content">
+                    <span class="stub__title">Здесь пока пусто</span>
+                    <p class="stub__descr">
+                      А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="stub__link" href="#gallery">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ac">
+              <h2 class="ac-header">
+                <button class="ac-trigger">
+                  <span class="accordion__title">C&nbsp;1700 по&nbsp;1799&nbsp;гг</span>
+                  <span class="accordion__icon"></span>
+                </button>
+              </h2>
+              <div class="ac-panel">
+                <div class="stub">
+                  <div class="stub__img"></div>
+                  <div class="stub__content">
+                    <span class="stub__title">Здесь пока пусто</span>
+                    <p class="stub__descr">
+                      А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="stub__link" href="#gallery">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ac">
+              <h2 class="ac-header">
+                <button class="ac-trigger">
+                  <span class="accordion__title">C&nbsp;1800 по&nbsp;1899&nbsp;гг</span>
+                  <span class="accordion__icon"></span>
+                </button>
+              </h2>
+              <div class="ac-panel">
+                <div class="stub">
+                  <div class="stub__img"></div>
+                  <div class="stub__content">
+                    <span class="stub__title">Здесь пока пусто</span>
+                    <p class="stub__descr">
+                      А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="stub__link" href="#gallery">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ac">
+              <h2 class="ac-header">
+                <button class="ac-trigger">
+                  <span class="accordion__title">C&nbsp;1900 по&nbsp;1999&nbsp;гг</span>
+                  <span class="accordion__icon"></span>
+                </button>
+              </h2>
+              <div class="ac-panel">
+                <div class="stub">
+                  <div class="stub__img"></div>
+                  <div class="stub__content">
+                    <span class="stub__title">Здесь пока пусто</span>
+                    <p class="stub__descr">
+                      А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="stub__link" href="#gallery">В галерею</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ac">
+              <h2 class="ac-header">
+                <button class="ac-trigger">
+                  <span class="accordion__title">C&nbsp;2000&nbsp;г</span>
+                  <span class="accordion__icon"></span>
+                </button>
+              </h2>
+              <div class="ac-panel">
+                <div class="stub">
+                  <div class="stub__img"></div>
+                  <div class="stub__content">
+                    <span class="stub__title">Здесь пока пусто</span>
+                    <p class="stub__descr">
+                      А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="stub__link" href="#gallery">В галерею</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="events" id="events">
+      <div class="container events-container">
+        <h2 class="section-title events__title">События</h2>
+        <div class="events__slider-container">
+          <div class="events__swiper">
+            <div class="events__swiper-button-prev swiper-button-prev">
+            </div>
+            <div class="events__swiper-button-next swiper-button-next">
+            </div>
+            <div class="swiper-wrapper events__swiper-container">
+              <div class="swiper-slide events__slide events__slide-1 event">
+                <div class="event__wrapper">
+                  <picture>
+                    <source srcset="assets/img/events-slide-1@320.jpg" media="(max-width: 375px)">
+                    <source srcset="assets/img/events-slide-1@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/events-slide-1@1024.jpg" media="(max-width: 1024px)">
+                    <img class="events__slide-img" src="assets/img/events-slide-1@1920.jpg"
+                      alt="Книжная гравюра в живом восприятии">
+                  </picture>
+                  <div class="event__content">
+                    <p class="event__info">
+                      <span class="event__venue">Музей им. Щусева</span>
+                      <time class="event__date">с&nbsp;20&nbsp;марта по&nbsp;30&nbsp;апреля</time>
+                    </p>
+                    <h3 class="event__title event__title--short">Книжная гравюра в&nbsp;живом восприятии</h3>
+                    <h3 class="event__title event__title--mobile">Книжная гравюра в&nbsp;восприятии</h3>
+                    <p class="event__descr">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель
+                      художественной династии, которую продолжили его&nbsp;брат Давид и&nbsp;сын&nbsp;Ридольфо</p>
+                    <a class="event__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide events__slide events__slide-2 event">
+                <div class="event__wrapper">
+                  <picture>
+                    <source srcset="assets/img/events-slide-2@320.jpg" media="(max-width: 375px)">
+                    <source srcset="assets/img/events-slide-2@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/events-slide-2@1024.jpg" media="(max-width: 1024px)">
+                    <img class="events__slide-img" src="assets/img/events-slide-2@1920.jpg"
+                      alt="Открытая дискуссия. Дмитрий Петров и Сергей Ильин.">
+                  </picture>
+                  <div class="event__content">
+                    <p class="event__info">
+                      <span class="event__venue">ММОМА</span>
+                      <time class="event__date">24&nbsp;марта 19:00</time>
+                    </p>
+                    <h3 class="event__title">
+                      <span>«Открытая дискуссия».</span>
+                      <span>Дмитрий Петров и&nbsp;Сергей Ильин.</span>
+                    </h3>
+                    <p class="event__descr">Высокий уровень вовлечения представителей целевой аудитории является чётким
+                      доказательством простого факта</p>
+                    <a class="event__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide events__slide events__slide-3 event">
+                <div class="event__wrapper">
+                  <picture>
+                    <source srcset="assets/img/events-slide-3@320.jpg" media="(max-width: 375px)">
+                    <source srcset="assets/img/events-slide-3@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/events-slide-3@1024.jpg" media="(max-width: 1024px)">
+                    <img class="events__slide-img" src="assets/img/events-slide-3@1920.jpg"
+                      alt="Выставка «Формация 2020»">
+                  </picture>
+                  <div class="event__content">
+                    <p class="event__info">
+                      <span class="event__venue">Еврейский музей</span>
+                      <time class="event__date">с&nbsp;31&nbsp;марта по&nbsp;21&nbsp;апреля</time>
+                    </p>
+                    <h3 class="event__title">Выставка «Формация 2020»</h3>
+                    <p class="event__descr">Идейные соображения высшего порядка, а&nbsp;также современная методология
+                      разработки играет важную роль в&nbsp;формировании глубокомысленных рассуждений</p>
+                    <a class="event__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide events__slide events__slide-4 event">
+                <div class="event__wrapper">
+                  <picture>
+                    <source srcset="assets/img/events-slide-4@320.jpg" media="(max-width: 375px)">
+                    <source srcset="assets/img/events-slide-4@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/events-slide-4@1024.jpg" media="(max-width: 1024px)">
+                    <img class="events__slide-img" src="assets/img/events-slide-4@1920.jpg"
+                      alt="Джон Винзор. Фотографии из серии «Метафора»">
+                  </picture>
+                  <div class="event__content">
+                    <p class="event__info">
+                      <span class="event__venue">ММАМ</span>
+                      <time class="event__date">с&nbsp;8&nbsp;апреля по&nbsp;20&nbsp;мая</time>
+                    </p>
+                    <h3 class="event__title">Джон Винзор. Фотографии из&nbsp;серии &laquo;Метафора&raquo;</h3>
+                    <p class="event__descr">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель
+                      художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо</p>
+                    <a class="event__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide events__slide events__slide-5 event">
+                <div class="event__wrapper">
+                  <picture>
+                    <source srcset="assets/img/events-slide-5@320.jpg" media="(max-width: 375px)">
+                    <source srcset="assets/img/events-slide-5@768.jpg" media="(max-width: 768px)">
+                    <source srcset="assets/img/events-slide-5@1024.jpg" media="(max-width: 1024px)">
+                    <img class="events__slide-img" src="assets/img/events-slide-5@1920.jpg"
+                      alt="XXIV Международная биеннале молодого искусства">
+                  </picture>
+                  <div class="event__content">
+                    <p class="event__info">
+                      <span class="eventvenue">Третьяковка на&nbsp;Крымском валу</span>
+                      <time class="event__date">с&nbsp;30&nbsp;марта по&nbsp;30&nbsp;апреля</time>
+                    </p>
+                    <h3 class="event__title">XXIV Международная биеннале молодого искусства</h3>
+                    <p class="event__descr">Внезапно, реплицированные с&nbsp;зарубежных источников, современные
+                      исследования
+                    </p>
+                    <a class="event__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="events-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <h2 class="section-title projects__title">Проекты</h2>
+        <p class="projects__descr">
+          Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно
+          фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны
+          с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой неузнаваемости, из-за чего возрастает
+          их&nbsp;статус бесполезности. Прежде всего, постоянное информационно-пропагандистское
+          <button class="projects__tooltip"
+            data-tippy-content="Пример современных тенденций - современная методология разработки">i</button>
+          обеспечение нашей
+          деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет
+          сомнений, что действия представителей оппозиции могут быть рассмотрены
+          <button class="projects__tooltip"
+            data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции">i</button>
+          исключительно в&nbsp;разрезе
+          маркетинговых и&nbsp;финансовых
+          <button class="projects__tooltip" data-tippy-content="В стремлении повысить качество">i</button>
+          предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также
+          представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
+          очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой неузнаваемости.
+          Подробнее:
+          <a class="projects__link" href="#">blanchard-art.ru/projects</a>
+          <a class="projects__link projects__link--tablet" href="#">blanchard-art.ru</a>
+          <a class="projects__link projects__link--mobile" href="#">blanchard-art.ru/projects/about</a>
+        </p>
+        <h3 class="projects__subtitle">Партнёры проектов:</h3>
+        <div class="partners">
+          <div class="partners__swiper-button-prev swiper-button-prev"></div>
+          <div class="partners__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-1">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-1" src="assets/img/projects-slide-1.png"
+                    alt="Логотип партнёра Freelands Foundation">
+                </a>
+              </div>
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-2">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-2" src="assets/img/projects-slide-2.png"
+                    alt="Логотип партнёра Institute for Conteporary Art">
+                </a>
+              </div>
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-3">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-3" src="assets/img/projects-slide-3.png"
+                    alt="Логотип партнёра Workhouse Art Center">
+                </a>
+              </div>
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-4">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-4" src="assets/img/projects-slide-4.png"
+                    alt="Логотип партнёра 1849 Wine Co.">
+                </a>
+              </div>
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-5">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-5" src="assets/img/projects-slide-5.png"
+                    alt="Логотип партнёра Hiscox">
+                </a>
+              </div>
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-6">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-6" src="assets/img/projects-slide-6.png"
+                    alt="Логотип партнёра Camden Arts Centre">
+                </a>
+              </div>
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-7">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-7" src="assets/img/projects-slide-7.png"
+                    alt="Логотип партнёра Stassen Premium Belgian Cider">
+                </a>
+              </div>
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-8">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-8" src="assets/img/projects-slide-8.png"
+                    alt="Логотип партнёра Watts Gallery Artists' Village">
+                </a>
+              </div>
+              <div class="swiper-slide partners__swiper-slide partners__swiper-slide-9">
+                <a class="partners__link" href="#">
+                  <img class="partners__logo partners__logo-9" src="assets/img/projects-slide-9.png"
+                    alt="Логотип партнёра ESAD">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="partners__swiper-button-next swiper-button-next">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <div class="contacts__wrap">
+          <div class="contacts__address">
+            <span class="contacts__address-title">Шоурум №4</span>
+            <span class="contacts__address-subtitle">Леонтьевский переулок, дом 5/1</span>
+          </div>
+          <form class="contacts__form callback" action="#" id="callback" method="post">
+            <div class="contacts__input-group">
+              <label for="cb-name" class="callback__label">
+                <input class="callback__input" id="cb-name" type="text" id="name" placeholder="Имя*"
+                  data-validate-field="name" required>
+              </label>
+              <label for="cb-tel" class="callback__label">
+                <input class="callback__input" id="cb-tel" type="tel" id="tel" placeholder="Телефон*"
+                  data-validate-field="tel" required>
+              </label>
+            </div>
+            <button class="callback__button" type="submit">Заказать<span class="callback__button-desktop"> обратный
+                звонок</span>
+            </button>
+          </form>
+          <div class="contacts__socials">
+            <span>Связаться в один клик</span>
+            <ul class="contacts__list list-reset">
+              <li class="contacts__item">
+                <a href="#" aria-label="по клику переход в Whatsapp">
+                  <img src="assets/icons/whatsapp.svg" alt="логотип Whatsapp">
+                </a>
+              <li class="contacts__item">
+                <a href="#" aria-label="по клику переход в Telegram">
+                  <img src="assets/icons/tg.svg" alt="логотип Telegram">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="map" id="map" aria-label="Карта Москвы с отметкой галереи" role="application"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrap">
+        <a>
+          <picture>
+            <source srcset="assets/icons/logo-320.svg" media="(max-width: 425px)">
+            <img class="footer__logo" src="assets/icons/logo.svg" alt="Логотип художественной галереи Blanchard">
+          </picture>
+        </a>
+        <ul class="footer__list list-reset">
+          <li class="footer__item">
+            <a class="footer__link" href="#" aria-label="по клику переход в Вконтакте">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                <path
+                  d="M22.5 0C10.074 0 0 10.0736 0 22.5C0 34.9264 10.074 45 22.5 45C34.926 45 45 34.9264 45 22.5C45 10.0736 34.926 0 22.5 0ZM33.9132 24.9335C34.9619 25.9577 36.0714 26.9217 37.0128 28.0519C37.4299 28.5519 37.823 29.0688 38.1222 29.6503C38.5495 30.4794 38.1637 31.3886 37.4216 31.4379L32.812 31.4369C31.6215 31.5354 30.6741 31.0553 29.8754 30.2414C29.2378 29.5927 28.6462 28.8999 28.0321 28.2292C27.7812 27.9539 27.517 27.6947 27.2021 27.4907C26.5737 27.0819 26.0277 27.2072 25.6677 27.8636C25.3008 28.5316 25.217 29.2719 25.182 30.0153C25.1319 31.1022 24.8041 31.3863 23.7135 31.4374C21.3832 31.5465 19.1721 31.1929 17.117 30.0181C15.3041 28.9818 13.901 27.5193 12.6783 25.8634C10.2973 22.6353 8.47381 19.0924 6.8354 15.4478C6.46665 14.627 6.73642 14.1878 7.64194 14.1707C9.14639 14.1417 10.6508 14.1454 12.1553 14.1694C12.7676 14.179 13.1727 14.5294 13.4079 15.1071C14.2209 17.1074 15.2176 19.0105 16.4665 20.7755C16.7994 21.2455 17.1391 21.7142 17.623 22.0461C18.157 22.4125 18.5639 22.2915 18.8158 21.6953C18.9769 21.3164 19.0464 20.9113 19.0814 20.5053C19.2011 19.1145 19.2153 17.7242 19.0082 16.339C18.8793 15.4722 18.3918 14.9124 17.5277 14.7485C17.0876 14.6652 17.152 14.5022 17.3661 14.2508C17.7376 13.8163 18.0856 13.5474 18.7812 13.5474L23.9893 13.5465C24.8101 13.7076 24.9942 14.0759 25.1056 14.9027L25.1102 20.6903C25.1006 21.0103 25.2709 21.9586 25.8454 22.1681C26.3058 22.32 26.6096 21.9508 26.8849 21.6594C28.1339 20.334 29.0237 18.7697 29.8206 17.1506C30.1723 16.4366 30.4757 15.6978 30.7703 14.9575C30.9895 14.4101 31.3301 14.1408 31.9479 14.15L36.9631 14.156C37.1108 14.156 37.2609 14.1574 37.4073 14.1827C38.2525 14.3273 38.4841 14.6909 38.2226 15.5154C37.811 16.8109 37.0114 17.89 36.2297 18.9718C35.3919 20.1301 34.4983 21.2478 33.6687 22.4111C32.9064 23.4746 32.9667 24.01 33.9132 24.9335Z"
+                  fill="none" />
+              </svg>
+            </a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#" aria-label="по клику переход в Одноклассники">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                <path
+                  d="M19.279 14.9859C19.279 16.8409 20.7828 18.3449 22.6379 18.3449C24.4929 18.3449 25.9967 16.8409 25.9967 14.9859C25.9967 13.1309 24.4929 11.6271 22.6379 11.6271C20.7828 11.6271 19.279 13.1309 19.279 14.9859Z"
+                  fill="none" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M22.5 45C34.9264 45 45 34.9264 45 22.5C45 10.0736 34.9264 0 22.5 0C10.0736 0 0 10.0736 0 22.5C0 34.9264 10.0736 45 22.5 45ZM14.5125 14.9858C14.5125 10.4984 18.1503 6.86047 22.6379 6.86047C27.1254 6.86047 30.7632 10.4984 30.7632 14.9858C30.7632 19.4734 27.1254 23.1115 22.6379 23.1115C18.1503 23.1115 14.5125 19.4734 14.5125 14.9858ZM30.8117 27.291C30.7086 27.3737 28.7593 28.9142 25.5064 29.5769L30.4165 34.4432C31.28 35.3053 31.2811 36.7042 30.419 37.5677C29.5569 38.431 28.1583 38.4324 27.2945 37.5701L22.5276 32.928L18.1979 37.5402C17.7644 37.9899 17.1862 38.216 16.6074 38.216C16.0553 38.216 15.5027 38.0106 15.074 37.5972C14.1956 36.7502 14.1701 35.3516 15.0171 34.4733L19.6777 29.6025C16.3336 28.9555 14.3039 27.3749 14.1993 27.291C13.2475 26.5277 13.0946 25.1372 13.8579 24.1852C14.6212 23.2334 16.0115 23.0805 16.9636 23.8437C16.9837 23.86 19.1067 25.4549 22.5275 25.4572C25.9483 25.4549 28.0273 23.86 28.0474 23.8437C28.9995 23.0805 30.3899 23.2334 31.1531 24.1852C31.9165 25.1372 31.7636 26.5277 30.8117 27.291Z"
+                  fill="none" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modals-overlay modals" aria-hidden="true">
+
+    <div class="modals__item gallery-modal" role="dialog" aria-modal="true" data-modal="one">
+      <picture>
+        <img class="modals__img" src="assets/img/modals-img-1.jpg"
+          alt="Картина Казимира Малевича «Торс (Фигура с розовым лицом)»">
+      </picture>
+      <div class="modals__content">
+        <h3 class="modals__title">Казимир Малевич</h3>
+        <h4 class="modals__subtitle">«Торс (Фигура с розовым лицом)»</h4>
+        <time class="modals__date">1928&ndash;1929</time>
+        <p class="modals__descr">
+          Это работа из&nbsp;зрелого периода творчества Казимира Малевича. На&nbsp;картине изображено абстрактное
+          человеческое тело с&nbsp;лицом, выполненным в&nbsp;розовых тонах. Художник играет с&nbsp;контрастом, создавая
+          ощущение глубины и&nbsp;загадочности.
+        </p>
+      </div>
+      <button class="modals__close-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="none" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
+            fill="none" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="modals__item gallery-modal" role="dialog" aria-modal="true" data-modal="two">
+      <picture>
+        <img class="modals__img" src="assets/img/modals-img-2.jpg" alt="Картина Казимира Малевича «Женщина с граблями»">
+      </picture>
+      <div class="modals__content">
+        <h3 class="modals__title">Казимир Малевич</h3>
+        <h4 class="modals__subtitle">«Женщина с граблями»</h4>
+        <time class="modals__date">1931&ndash;1932</time>
+        <p class="modals__descr">
+          Картина из&nbsp;второй серии крестьянского цикла работ Казимира Малевича. Художник принялся
+          за&nbsp;её&nbsp;создание в&nbsp;1930&ndash;1931&nbsp;годах, после того, как&nbsp;первый цикл был утерян после
+          Берлинской и&nbsp;Варшавской выставок в&nbsp;1927&nbsp;году.
+        </p>
+      </div>
+      <button class="modals__close-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="none" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
+            fill="none" />
+        </svg>
+      </button>
+    </div>
+
+
+    <div class="modals__item gallery-modal" role="dialog" aria-modal="true" data-modal="three">
+      <picture>
+        <img class="modals__img" src="assets/img/modals-img-3.jpg" alt="Картина Казимира Малевича 'Женщина с граблями'">
+      </picture>
+      <div class="modals__content">
+        <h3 class="modals__title">Казимир Малевич</h3>
+        <h4 class="modals__subtitle">«Уборка ржи»</h4>
+        <time class="modals__date">1911&ndash;1912</time>
+        <p class="modals__descr">
+          &laquo;Уборка ржи&raquo;&nbsp;&mdash; это образчик российского кубофутуризма, взявшего начало
+          у&nbsp;французских мастеров. Работа относится к&nbsp;крестьянской серии картин, запечатлевшей рутинный уклад
+          сельской жизни. В&nbsp;этот период
+          у&nbsp;Малевича произошел перелом в&nbsp;направлении художественного стиля.
+        </p>
+      </div>
+      <button class="modals__close-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="none" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
+            fill="none" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="modals__item gallery-modal" role="dialog" aria-modal="four" data-modal="four">
+      <picture>
+        <img class="modals__img" src="assets/img/modals-img-4.jpg" alt="Картина Казимира Малевича 'Женщина с граблями'">
+      </picture>
+      <div class="modals__content">
+        <h3 class="modals__title">Иван Клюн</h3>
+        <h4 class="modals__subtitle">«Супрематизм»</h4>
+        <time class="modals__date">1916</time>
+        <p class="modals__descr">
+          Знаковая работа одного из периодов творчества Клюна. Как художник супрематизма, он&nbsp;стремился
+          к&nbsp;образу
+          абсолютной реальности через абстрактные формы и&nbsp;цвета, подчеркивая духовные идеалы и&nbsp;принципы
+          универсализма.
+        </p>
+      </div>
+      <button class="modals__close-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="none" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
+            fill="none" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="modals__item gallery-modal" role="dialog" aria-modal="true" data-modal="five">
+      <picture>
+        <img class="modals__img" src="assets/img/modals-img-5.jpg" alt="Картина Казимира Малевича «Женщина с вёдрами»">
+      </picture>
+      <div class="modals__content">
+        <h3 class="modals__title">Казимир Малевич</h3>
+        <h4 class="modals__subtitle">«Женщина с вёдрами»</h4>
+        <time class="modals__date">1912</time>
+        <p class="modals__descr">
+          Картина является ярким произведением авангардного искусства.
+          Ныне холст хранится в&nbsp;коллекции нью-йоркского Музея современного искусства.
+          Стиль, известный как русский авангард, характерен для искусства Российской Империи, а&nbsp;затем
+          и&nbsp;Советского Союза
+          в&nbsp;период с&nbsp;1890 по&nbsp;1930&nbsp;год.
+        </p>
+      </div>
+      <button class="modals__close-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="none" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
+            fill="none" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="modals__item gallery-modal" role="dialog" aria-modal="true" data-modal="six">
+      <picture>
+        <img class="modals__img" src="assets/img/modals-img-6.jpg" alt="Картина Казимира Малевича. Супрематизм">
+      </picture>
+      <div class="modals__content">
+        <h3 class="modals__title">Казимир Малевич</h3>
+        <h4 class="modals__subtitle">Супрематизм</h4>
+        <time class="modals__date">1916</time>
+        <p class="modals__descr">
+          Худоджник стремился к&nbsp;созданию универсального языка искусства, используя геометрические фигуры, простые
+          формы и
+          основные цвета. В&nbsp;своих работах Малевич доводил до&nbsp;совершенства идею абсолютной чистоты
+          и&nbsp;гармонии, что отличало его от
+          традиционных художественных течений.
+        </p>
+      </div>
+      <button class="modals__close-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="none" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
+            fill="none" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+</body>
+
+</html>
