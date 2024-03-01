@@ -8,10 +8,10 @@ function init() {
 
 	let placemark = new ymaps.Placemark(
 		center,
-		{ hintContent: 'Отметка галереи' },
+		{ hintContent: 'Расположение галереи' },
 		{
 			iconLayout: 'default#image',
-			iconImageHref: '/assets/icons/placemark.svg',
+			iconImageHref: 'assets/icons/placemark.svg',
 			iconImageSize: [20, 20],
 			iconImageOffset: [-10, -7]
 		}
