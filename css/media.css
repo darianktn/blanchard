@@ -415,15 +415,15 @@
 	/* hero-slider */
 
 	.hero__slide-1 {
-		background-image: url('/assets/img/hero-slide-1@1024.jpg');
+		background-image: url('../assets/img/hero-slide-1@1024.jpg');
 	}
 
 	.hero__slide-2 {
-		background-image: url('/assets/img/hero-slide-2@1024.jpg');
+		background-image: url('../assets/img/hero-slide-2@1024.jpg');
 	}
 
 	.hero__slide-3 {
-		background-image: url('/assets/img/hero-slide-3@1024.jpg');
+		background-image: url('../assets/img/hero-slide-3@1024.jpg');
 	}
 
 	/* hero */
@@ -715,15 +715,15 @@
 	/* hero-slider */
 
 	.hero__slide-1 {
-		background-image: url('/assets/img/hero-slide-1@768.jpg');
+		background-image: url('../assets/img/hero-slide-1@768.jpg');
 	}
 
 	.hero__slide-2 {
-		background-image: url('/assets/img/hero-slide-2@768.jpg');
+		background-image: url('../assets/img/hero-slide-2@768.jpg');
 	}
 
 	.hero__slide-3 {
-		background-image: url('/assets/img/hero-slide-3@768.jpg');
+		background-image: url('../assets/img/hero-slide-3@768.jpg');
 	}
 
 	.hero__descr {
@@ -1324,15 +1324,15 @@
 	}
 
 	.hero__slide-1 {
-		background-image: url('/assets/img/hero-slide-1@320.jpg');
+		background-image: url('../assets/img/hero-slide-1@320.jpg');
 	}
 
 	.hero__slide-2 {
-		background-image: url('/assets/img/hero-slide-2@320.jpg');
+		background-image: url('../assets/img/hero-slide-2@320.jpg');
 	}
 
 	.hero__slide-3 {
-		background-image: url('/assets/img/hero-slide-3@320.jpg');
+		background-image: url('../assets/img/hero-slide-3@320.jpg');
 	}
 
 	/* gallery */
