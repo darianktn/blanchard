@@ -7,7 +7,9 @@
 ### В проект внедрены:
 - адаптивность;
 - базовая доступность;
-- базовая кроссбраузерность;  
+- базовая кроссбраузерность;
+- семантика;
+- pixel perfect
 
 ### Используемые технологии и библиотеки:
 - HTML;
@@ -19,7 +21,7 @@
 - [Choices.js](https://github.com/Choices-js/Choices);
 - [Inputmask,js](https://github.com/RobinHerbots/Inputmask);
 - [JusValidate](https://github.com/horprogs/Just-validate);
-- [Simplebar.js](https://github.com/Grsmto/simplebar);  
+- [Simplebar.js](https://github.com/Grsmto/simplebar)  
 
 ### Структура проекта
 
