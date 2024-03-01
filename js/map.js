@@ -11,7 +11,7 @@ function init() {
 		{ hintContent: 'Отметка галереи' },
 		{
 			iconLayout: 'default#image',
-			iconImageHref: '../assets/icons/placemark.svg',
+			iconImageHref: '/assets/icons/placemark.svg',
 			iconImageSize: [20, 20],
 			iconImageOffset: [-10, -7]
 		}
