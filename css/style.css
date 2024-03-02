@@ -101,6 +101,7 @@ button {
 }
 
 body {
+  min-width: 320px;
 	background-color: var(--white);
 	font-family: 'OpenSans', serif;
 }
